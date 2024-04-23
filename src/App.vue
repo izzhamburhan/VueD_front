@@ -76,26 +76,33 @@ export default {
 </script>
 
 <style lang="scss">
-@import  '../node_modules/bulma';
+// Import Bulma styles
+@import '../node_modules/bulma';
 
 // Customize navbar
 .navbar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #292929; /* Dark background color */
 }
 
 .navbar-item {
   font-size: 1.1rem;
+  padding: 1rem 1.5rem; /* Increased padding for better spacing */
+  &:hover {
+    background-color: #1a1a1a; /* Darker hover background color */
+  }
 }
 
 .navbar-burger {
   color: #fff;
+  font-size: 1.5rem; /* Increased burger icon size */
 }
 
 // Customize footer
 .footer {
   background-color: #363636;
   color: #fff;
-  padding: 2rem 0;
+  padding: 3rem 0; /* Increased padding for better spacing */
 }
 
 // Additional custom styling
@@ -109,10 +116,15 @@ export default {
   flex: 1;
 }
 
+/* Existing styles */
 .router-link-active {
-  color: #48c774 !important;
+  color: #48c774 !important; /* Active link color */
 }
 
+/* Override color for <router-link> within the cart button */
+.button.is-success.router-link-active {
+  color: #fff !important; /* White color for active link within cart button */
+}
 
 /////// loading css /////////
 .lds-dual-ring {
@@ -127,8 +139,8 @@ export default {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #ccc;
-  border-color: #ccc transparent #ccc transparent;
+  border: 6px solid #48c774; /* Loading animation color */
+  border-color: #48c774 transparent #48c774 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -143,12 +155,9 @@ export default {
 .is-loading-bar {
   height: 0;
   overflow: hidden;
-
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-
+  transition: height 0.3s; /* Smooth transition for loading animation */
   &.is-loading {
-    height: 80px;
+    height: 80px; /* Height when loading */
   }
 }
 </style>

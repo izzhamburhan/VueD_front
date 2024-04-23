@@ -72,3 +72,23 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+/* Styling adjustments to improve the appearance */
+
+/* Category page container */
+.page-category {
+    padding: 2rem; /* Add padding to the category page container */
+}
+
+/* Category name */
+.is-size-2.has-text-centered {
+    margin-bottom: 2rem; /* Add some space below the category name */
+}
+
+/* Product boxes */
+.column.is-3 {
+    margin-bottom: 2rem; /* Add space between product boxes */
+}
+
+</style>

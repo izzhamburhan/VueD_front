@@ -88,3 +88,62 @@ export default {
     }
 }
 </script>
+
+
+<style scoped>
+/* Styling adjustments to improve the appearance */
+
+/* Product details container */
+.columns.is-multiline {
+    justify-content: center; /* Center align the columns */
+    margin-top: 2rem; /* Add some space at the top */
+}
+
+.column.is-9 {
+    text-align: center; /* Center align the product details */
+}
+
+.title {
+    font-size: 2.5rem; /* Increase title font size */
+    margin-bottom: 1rem; /* Add some space below the title */
+}
+
+.subtitle {
+    font-size: 1.5rem; /* Increase subtitle font size */
+    margin-bottom: 1rem; /* Add some space below the subtitle */
+}
+
+.image {
+    max-width: 100%; /* Ensure the image fits within its container */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/* Product information container */
+/* Product information container */
+.column.is-3 {
+    background-color: #292929; /* Dark background color */
+    color: #fff; /* Light text color */
+    padding: 2rem; /* Add padding to the product information container */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+.field {
+    margin-top: 1.5rem; /* Add some space between fields */
+}
+
+.control {
+    margin-bottom: 1rem; /* Add some space between controls */
+}
+
+.input {
+    width: 80px; /* Set width of the input field */
+}
+
+.button.is-dark {
+    width: 100%; /* Make the button full width */
+}
+
+
+</style>
