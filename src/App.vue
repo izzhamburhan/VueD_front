@@ -1,30 +1,92 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="wrapper">
+    <nav class="navbar is-dark">
+      <div class="navbar-brand">
+        <router-link to="/" class="navbar-item"><strong>VueD</strong></router-link> 
+
+        <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-targets="navbar-menu" @click="showMobileMenu = !showMobileMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active':showMobileMenu }">
+        <div class="navbar-end">
+          <router-link to="/summer" class="navbar-item">Summer</router-link>
+          <router-link to="/winter" class="navbar-item">Winter</router-link>
+
+          <div class="navbar-item">
+            <div class="buttons">
+              <router-link to="/log-in" class="button is-light">Log In</router-link>
+
+              <router-link to="/cart" class="button is-success">
+                <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                <span>Cart</span>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <router-view/>
+    </section>
+
+    <footer class="footer">
+      <p class="has-text-centered"> &copy; 2024 NuxD. All rights reserved. </p>
+    </footer>
+
+  </div>
+
 </template>
 
+<script>
+export default {
+ data() {
+  return {
+    showMobileMenu : false,
+  }
+ }
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import  '../node_modules/bulma';
+
+// Customize navbar
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-nav {
-  padding: 30px;
+.navbar-item {
+  font-size: 1.1rem;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.navbar-burger {
+  color: #fff;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+// Customize footer
+.footer {
+  background-color: #363636;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+// Additional custom styling
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  flex: 1;
+}
+
+.router-link-active {
+  color: #48c774 !important;
 }
 </style>
