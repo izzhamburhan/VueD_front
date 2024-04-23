@@ -53,6 +53,8 @@ export default {
   },
   mounted() {
     this.getLatestProducts()
+
+    document.title = 'Home | VueD'
   },
   methods: {
     async getLatestProducts() {
