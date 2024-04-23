@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="control">
-                    <a class="button is-dark">Add to cart</a>
+                    <a class="button is-dark" @click="addToCart">Add to cart</a>
                 </div>
             </div>
         </div>
@@ -32,13 +32,14 @@
 
 <script>
 import axios from 'axios'
+import { toast }  from 'bulma-toast'
 
 export default {
-    name:'Product',
+    name: 'Product',
     data() {
-        return{
-            product : {},
-            quantity : 1
+        return {
+            product: {},
+            quantity: 1
         }
     },
     mounted() {
@@ -57,6 +58,26 @@ export default {
                 .catch(error => {
                     console.log(error)
                 })
+        },
+        addToCart() {
+            if (isNaN(this.quantity) || this.quantity < 1) {
+                this.quantity = 1
+            }
+
+            const item = {
+                product: this.product,
+                quantity: this.quantity
+            }
+            this.$store.commit('addToCart', item)
+
+            toast({
+                message : "The product was added to the cart",
+                type : "is-success",
+                position : "bottom-right",
+                dismissible : true,
+                duration : 3000,
+                pauseOnHover : true
+            })
         }
     }
 }
