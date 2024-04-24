@@ -11,6 +11,7 @@ import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
 import MyAccount from '../views/MyAccount.vue'
 import Checkout from '../views/Checkout.vue'
+import Success from '../views/Success.vue'
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/cart',
     name: 'Cart',
     component: Cart
+  },
+  {
+    path: '/cart/success',
+    name: 'Success',
+    component: Success
   },
   {
     path: '/:category_slug',
