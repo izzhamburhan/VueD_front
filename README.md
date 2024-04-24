@@ -1,4 +1,4 @@
-# nuxd_front
+# VueD_front
 
 ## Project setup
 ```
