@@ -27,28 +27,28 @@ export default {
         getItemTotal(item) {
             return item.quantity * item.product.price
         },
-        // decrementQuantity(item) {
-        //     item.quantity -= 1
+        decrementQuantity(item) {
+            item.quantity -= 1
 
-        //     if (item.quantity === 0) {
-        //         this.$emit('removeFromCart', item)
-        //     }
+            if (item.quantity === 0) {
+                this.$emit('removeFromCart', item)
+            }
 
-        //     this.updateCart()
-        // },
-        // incrementQuantity(item) {
-        //     item.quantity += 1
+            this.updateCart()
+        },
+        incrementQuantity(item) {
+            item.quantity += 1
 
-        //     this.updateCart()
-        // },
-        // updateCart() {
-        //     localStorage.setItem('cart', JSON.stringify(this.$store.state.cart))
-        // },
-        // removeFromCart(item) {
-        //     this.$emit('removeFromCart', item)
+            this.updateCart()
+        },
+        updateCart() {
+            localStorage.setItem('cart', JSON.stringify(this.$store.state.cart))
+        },
+        removeFromCart(item) {
+            this.$emit('removeFromCart', item)
 
-        //     this.updateCart()
-        // },
+            this.updateCart()
+        },
     },
 }
 </script>
